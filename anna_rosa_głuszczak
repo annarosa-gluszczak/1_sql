@@ -1,0 +1,44 @@
+create database dentists;
+
+create table dentists (
+Location varchar(50) not null, 
+Period integer not null,
+Indicator varchar (50) not null,
+firs_tooltip numeric not null
+);
+
+alter table dentists alter column location set data type varchar(100);
+
+ALTER TABLE dentists RENAME COLUMN "First Tooltip" TO first_tooltip;
+
+
+
+alter table dentists drop column firs_tooltip;
+
+select * from dentists d ;
+
+select period , first_tooltip
+from dentists d ;
+
+select period as rok, first_tooltip as wskaznik
+from dentists d ;
+
+select *
+from dentists
+where location like 'B%'or period = '2006';
+
+select *
+from dentists d 
+where "location" like '%land';
+
+
+select *
+from dentists d 
+where "location" like '%land'
+order by "period" ;
+
+
+select *
+from dentists d 
+where location like 'Poland'
+order by "period" ;
